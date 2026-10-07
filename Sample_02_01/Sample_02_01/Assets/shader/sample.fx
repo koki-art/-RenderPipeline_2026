@@ -30,5 +30,6 @@ vsOut.pos.y *= 0.5f;
 // ピクセルシェーダー
 float4 PSMain(VSOutput vsOut) : SV_Target0
 {
+// 赤色
     return float4(1.0f, 0.0f, 0.0f, 1.0f);
 }
