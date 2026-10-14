@@ -36,9 +36,18 @@ float4 PSMain(VSOutput vsOut) : SV_Target0
     // return float4(1.0f, 1.0f, 0.0f, 1.0f);
     // step-4 頂点シェーダーから受け取ったカラーを出力する
      float4 color;
-color.x= vsOut.color.x;
-color.y= vsOut.color.y;
-color.z= vsOut.color.z;
-color.w= 1.0f; //今はαは気にしない
+// color.x= vsOut.color.x;
+// color.y= vsOut.color.y;
+// color.z= vsOut.color.z;
+// color.w= 1.0f; //今はαは気にしない
+
+// 縞模様
+color.x= vsOut.pos.x%20/20.0f;
+color.y= vsOut.color.g;
+color.z= vsOut.color.b;
+color.w= 1.0f;
+
 return color;
+
+
 }
